@@ -51,3 +51,33 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 #Create & Train Logistic Regression Model
 model = LogisticRegression()
+
+#Train the Model
+model.fit(X_train, y_train)
+
+#Make Predictions on Test Set
+y_pred = model.predict(X_test)
+
+print(y_pred)
+
+#Check Accuracy
+accuracy = accuracy_score(y_test, y_pred)
+
+print("Accuracy:", accuracy)
+
+print(classification_report(y_test, y_pred))
+
+#Workflow:
+""" Text Reviews
+      ↓
+CountVectorizer
+      ↓
+Numerical Features
+      ↓
+Train-Test Split
+      ↓
+Logistic Regression
+      ↓
+Prediction
+      ↓
+Accuracy Evaluation """
